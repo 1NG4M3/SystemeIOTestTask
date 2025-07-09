@@ -58,4 +58,25 @@ public class CostOfOnlineCoursePage {
         attachScreenshot("✅ Popup successfully closed");
         return this;
     }
+
+    @Step("Check that popup is NOT visible within short timeout")
+    public CostOfOnlineCoursePage verifyPopupNotVisibleShortTimeout() {
+        popupContainer.shouldNotBe(visible, Duration.ofSeconds(1));
+        attachScreenshot("❗ Popup not visible within 1 second");
+        return this;
+    }
+
+    @Step("Check that 'Receive my copy' button is NOT visible")
+    public CostOfOnlineCoursePage verifyReceiveCopyButtonNotVisible() {
+        receiveCopyButton.shouldNotBe(visible, Duration.ofSeconds(1));
+        attachScreenshot("❗ 'Receive my copy' button not visible");
+        return this;
+    }
+
+    @Step("Check that popup close button is NOT visible")
+    public CostOfOnlineCoursePage verifyCloseButtonNotVisible() {
+        closeButton.shouldNotBe(visible, Duration.ofSeconds(1));
+        attachScreenshot("❗ Close button not visible");
+        return this;
+    }
 }
