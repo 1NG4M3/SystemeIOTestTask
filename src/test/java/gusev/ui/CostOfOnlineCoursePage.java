@@ -7,6 +7,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static gusev.util.ScreenshotHelper.attachScreenshot;
 
 public class CostOfOnlineCoursePage {
 
@@ -31,6 +32,7 @@ public class CostOfOnlineCoursePage {
     @Step("Wait until popup content is visible")
     public CostOfOnlineCoursePage waitForPopup() {
         popupContainer.shouldBe(visible, Duration.ofSeconds(60));
+        attachScreenshot("✅ Popup appeared");
         return this;
     }
 
@@ -40,6 +42,7 @@ public class CostOfOnlineCoursePage {
                 .shouldBe(visible)
                 .shouldHave(text("I want to receive my copy "))
                 .scrollTo();
+        attachScreenshot("✅ Receive Copy button visible");
         return this;
     }
 
@@ -52,6 +55,7 @@ public class CostOfOnlineCoursePage {
     @Step("Verify popup has disappeared")
     public CostOfOnlineCoursePage verifyPopupClosed() {
         popupContainer.should(disappear, Duration.ofSeconds(10));
+        attachScreenshot("✅ Popup successfully closed");
         return this;
     }
 }

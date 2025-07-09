@@ -2,10 +2,13 @@ package gusev.ui;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import gusev.util.AllureStepListener;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+@ExtendWith(AllureStepListener.class)
 abstract public class BaseSelenideTest {
 
     public static void setUp() {
