@@ -26,3 +26,9 @@ test {
     useJUnitPlatform()
     systemProperty "allure.results.directory", "build/allure-results"
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
