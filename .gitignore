@@ -1,0 +1,47 @@
+# === Gradle ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# === Allure Reports ===
+build/allure-report/
+build/allure-results/
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+out/
+
+# === VSCode ===
+.vscode/
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Logs and Temp ===
+*.log
+*.tmp
+
+# === Docker ===
+**/.docker/
+.dockerignore
+
+# === Optional: test-specific temp dirs ===
+test-output/
+reports/
+
+# === Exclude compiled binaries ===
+bin/
+target/
+*.class
+
+# === Exclude coverage tools ===
+.jacoco/
+coverage/
+*.exec
+
+# === Optional cleanup ===
+nbproject/
+dist/
+nbbuild/

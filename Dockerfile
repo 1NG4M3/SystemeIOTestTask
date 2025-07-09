@@ -1,0 +1,6 @@
+FROM gradle:8.7.0-jdk17
+
+WORKDIR /app
+COPY . .
+
+CMD ["./gradlew", "clean", "test"]

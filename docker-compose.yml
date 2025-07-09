@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  selenium:
+    image: selenium/standalone-chrome:124.0
+    ports:
+      - "4444:4444"
+
+  tests:
+    build: .
+    environment:
+      SELENIDE_REMOTE: http://selenium:4444/wd/hub
+    depends_on:
+      - selenium
+    volumes:
+      - .:/app
+    working_dir: /app
